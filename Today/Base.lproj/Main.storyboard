@@ -33,8 +33,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo" id="TMP-pS-fFR">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="w8W-8T-E5c">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="w8W-8T-E5c">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonClicked:" destination="gP1-TP-HDb" id="APF-OH-rRM"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
