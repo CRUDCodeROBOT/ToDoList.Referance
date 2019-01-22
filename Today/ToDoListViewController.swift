@@ -11,7 +11,7 @@ import UIKit
 class ToDoListViewController: UITableViewController{
 
     
-    let itemArray = ["Find 1","Find 2","find 3"]
+    var itemArray = ["Find 1","Find 2","find 3"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,11 +44,38 @@ print(itemArray[indexPath.row])
     
     tableView.deselectRow(at: indexPath, animated: true)
     }
+    }
     //MARK - Add New Item
     
-    
-    }
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
+    
+        var textField = UITextField()
+        
+        
+        let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
+    
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            //what will happen once item is added
+         //   print("Success!")
+            //print(textField.txt)
+            
+            self.itemArray.append(textField.text!)
+            self.tableView.reloadData()
+     
+        }
+       
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Creat new Item"
+            // add text to local var, ie. extend the scope of var in the closure
+            textField = alertTextField
+            
+        
+            alert.addAction(action)
+            
+           
+            // print(alertText.txt)
+        }
+        present(alert, animated: true, completion: nil)
     }
 
 }
