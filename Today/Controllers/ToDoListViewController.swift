@@ -34,10 +34,8 @@ class ToDoListViewController: UITableViewController{
         newItem.title = "Future"
         itemArray.append(newItem3)
         
-        //   if let
-        //        items = defaults.array(forKey: "ToDoListArray") as? [String]
-        //
-        //   {itemArray = items}
+           if let items = defaults.array(forKey: "ToDoListArray") as? [Item]
+         {itemArray = items}
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
