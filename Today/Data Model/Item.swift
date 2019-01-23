@@ -8,6 +8,7 @@
 
 import Foundation
 
+// setting default value of Item to false
 class Item {
     var title : String = ""
     var done : Bool = false
